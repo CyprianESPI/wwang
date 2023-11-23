@@ -176,13 +176,26 @@
 </style>
 
 <main class="main">
-  <div class="content">
+  <div>
     <div>
-      <!-- some.component.html -->
-      <h1>WhereWereAng - BarCode & QrCode Scanner</h1>
-      <h2>Code:</h2>
-      <input type="number" value="{{ScanResult}}">
-      <zxing-scanner [formats]="AllowedFormats" (scanSuccess)="SuccessScan($event)"></zxing-scanner>
+      <mat-toolbar color="primary">
+        <span>WhereWereAng - BarCode & QrCode Scanner</span>
+      </mat-toolbar>
+      <mat-card>
+        <mat-card-header>
+          <mat-form-field>
+            <mat-label>Code</mat-label>
+            <input matInput type="number" [(ngModel)]="ScanResult">
+            @if (ScanResult) {
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="ScanResult=''">
+              <mat-icon>close</mat-icon>
+            </button>
+            }
+          </mat-form-field>
+        </mat-card-header>
+        <zxing-scanner style="margin: 2%;" [formats]="AllowedFormats"
+          (scanSuccess)="SuccessScan($event)"></zxing-scanner>
+      </mat-card>
     </div>
   </div>
 </main>
