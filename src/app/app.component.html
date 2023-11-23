@@ -180,7 +180,8 @@
     <div>
       <!-- some.component.html -->
       <h1>WhereWereAng - BarCode & QrCode Scanner</h1>
-      <h2>Code: {{ScanResult}}</h2>
+      <h2>Code:</h2>
+      <input type="number" value="{{ScanResult}}">
       <zxing-scanner [formats]="AllowedFormats" (scanSuccess)="SuccessScan($event)"></zxing-scanner>
     </div>
   </div>
