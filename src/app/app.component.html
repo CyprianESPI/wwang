@@ -179,7 +179,11 @@
   <div class="content">
     <div>
       <!-- some.component.html -->
+      <h1>WhereWereAng</h1>
+      <h2>BarCode & QrCode Scanner</h2>
       <zxing-scanner [formats]="AllowedFormats" (scanSuccess)="SuccessScan($event)"></zxing-scanner>
+      <h2>Code:</h2>
+      <h3>{{ScanResult}}</h3>
     </div>
     <div class="left-side">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 982 239" fill="none" class="angular-logo">
