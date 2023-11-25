@@ -23,7 +23,7 @@
             </button>
             }
           </mat-form-field>
-          <a mat-raised-button color="primary" href=" https://www.barcodelookup.com/{{ScanResult}}">Search online</a>
+          <a mat-raised-button color="primary" href="https://www.barcodelookup.com/{{ScanResult}}">Search online</a>
         </mat-card-header>
         <zxing-scanner style="margin: 2%;" [formats]="AllowedFormats"
           (scanSuccess)="SuccessScan($event)"></zxing-scanner>
