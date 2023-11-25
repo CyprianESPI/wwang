@@ -24,7 +24,13 @@
             }
           </mat-form-field>
           <a mat-raised-button color="primary" href="https://www.barcodelookup.com/{{ScanResult}}">Search online</a>
+          <button (click)="GetDbInfo()">GetDbInfo</button>
         </mat-card-header>
+
+        <mat-list *ngFor="let prop of Item | keyvalue">
+          <p>{{prop.key}}:{{prop.value}}</p>
+        </mat-list>
+
         <zxing-scanner style="margin: 2%;" [formats]="AllowedFormats"
           (scanSuccess)="SuccessScan($event)"></zxing-scanner>
       </mat-card>
