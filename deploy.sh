@@ -7,3 +7,7 @@ cp -r docs/browser/. docs/.
 
 # Avoid 404 not found error
 cp docs/browser/index.html docs/404.html
+
+git add docs/.
+
+git commit -m "build"
