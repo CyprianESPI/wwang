@@ -47,9 +47,9 @@
             </mat-card-actions>
           </mat-card-header>
 
-          <mat-card-content *ngIf="ScannerEnabled">
-            <mat-progress-bar mode="indeterminate" style="max-width: 90vh;"></mat-progress-bar>
-            <zxing-scanner style="max-width: 90vh;" [formats]="AllowedFormats" (scanSuccess)="SuccessScan($event)"
+          <mat-card-content *ngIf="ScannerEnabled" style="max-width: 90vh;">
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            <zxing-scanner [formats]="AllowedFormats" (scanSuccess)="SuccessScan($event)"
               [enable]="ScannerEnabled"></zxing-scanner>
           </mat-card-content>
         </mat-card>
@@ -58,32 +58,34 @@
           <mat-card-header>
             <mat-card-title>Results</mat-card-title>
           </mat-card-header>
-          <table mat-table [dataSource]="MatchingItems">
+          <mat-card-content>
+            <table mat-table [dataSource]="MatchingItems">
 
-            <!--- Note that these columns can be defined in any order.
+              <!--- Note that these columns can be defined in any order.
                   The actual rendered columns are set as a property on the row definition" -->
 
-            <!-- Barcode -->
-            <ng-container matColumnDef="Barcode">
-              <th mat-header-cell *matHeaderCellDef> Barcode </th>
-              <td mat-cell *matCellDef="let element"> {{element.Barcode}} </td>
-            </ng-container>
+              <!-- Barcode -->
+              <ng-container matColumnDef="Barcode">
+                <th mat-header-cell *matHeaderCellDef> Barcode </th>
+                <td mat-cell *matCellDef="let element"> {{element.Barcode}} </td>
+              </ng-container>
 
-            <!-- Price -->
-            <ng-container matColumnDef="Price">
-              <th mat-header-cell *matHeaderCellDef> Price </th>
-              <td mat-cell *matCellDef="let element"> {{element.Price}} </td>
-            </ng-container>
+              <!-- Price -->
+              <ng-container matColumnDef="Price">
+                <th mat-header-cell *matHeaderCellDef> Price </th>
+                <td mat-cell *matCellDef="let element"> {{element.Price}} </td>
+              </ng-container>
 
-            <!-- Name_EN -->
-            <ng-container matColumnDef="Name">
-              <th mat-header-cell *matHeaderCellDef> Name </th>
-              <td mat-cell *matCellDef="let element"> {{element.Name_EN}} </td>
-            </ng-container>
+              <!-- Name_EN -->
+              <ng-container matColumnDef="Name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.Name_EN}} </td>
+              </ng-container>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </mat-card-content>
         </mat-card>
       </mat-card>
     </div>
