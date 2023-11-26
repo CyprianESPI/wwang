@@ -1,9 +1,4 @@
-html,
-body {
+.pageA4 {
   height: 297mm;
   width: 210mm;
-}
-
-* {
-  border: 2px solid black;
 }
