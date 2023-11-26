@@ -6,6 +6,7 @@
   padding: 1.6mm;
 
   display: flex;
+  justify-content: center;
   flex-flow: wrap
 }
 
