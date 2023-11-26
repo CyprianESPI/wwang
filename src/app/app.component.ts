@@ -12,6 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 export type Item = {
   Num: string;
@@ -32,7 +33,7 @@ export type Item = {
   standalone: true,
   imports: [CommonModule, RouterOutlet, ZXingScannerModule,
     MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatIconModule,
-    MatToolbarModule, MatCardModule, MatListModule, MatTableModule],
+    MatToolbarModule, MatCardModule, MatListModule, MatTableModule, MatProgressBarModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

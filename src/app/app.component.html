@@ -32,20 +32,32 @@
           </button>
         </mat-card-header>
 
-        <div>
-          <button mat-fab color="secondary" (click)="ScannerEnabled=false" *ngIf="ScannerEnabled">
-            <mat-icon>videocam_off</mat-icon>
-          </button>
-          <button mat-fab color="secondary" (click)="ScannerEnabled=true" *ngIf="!ScannerEnabled">
-            <mat-icon>videocam</mat-icon>
-          </button>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-header>
+              <mat-card-title>Scanner</mat-card-title>
+            </mat-card-header>
+            <mat-card-actions>
+              <button mat-fab color="secondary" (click)="ScannerEnabled=false" *ngIf="ScannerEnabled">
+                <mat-icon>videocam_off</mat-icon>
+              </button>
+              <button mat-fab color="secondary" (click)="ScannerEnabled=true" *ngIf="!ScannerEnabled">
+                <mat-icon>videocam</mat-icon>
+              </button>
+            </mat-card-actions>
+          </mat-card-header>
 
-
-          <zxing-scanner style="max-width: 90vh;" [formats]="AllowedFormats" (scanSuccess)="SuccessScan($event)"
-            [enable]="ScannerEnabled" *ngIf="ScannerEnabled"></zxing-scanner>
-        </div>
+          <mat-card-content *ngIf="ScannerEnabled">
+            <mat-progress-bar mode="indeterminate" style="max-width: 90vh;"></mat-progress-bar>
+            <zxing-scanner style="max-width: 90vh;" [formats]="AllowedFormats" (scanSuccess)="SuccessScan($event)"
+              [enable]="ScannerEnabled"></zxing-scanner>
+          </mat-card-content>
+        </mat-card>
 
         <mat-card>
+          <mat-card-header>
+            <mat-card-title>Results</mat-card-title>
+          </mat-card-header>
           <table mat-table [dataSource]="MatchingItems">
 
             <!--- Note that these columns can be defined in any order.
