@@ -71,6 +71,11 @@ export class AppComponent {
     const max_results: number = 10;
     this.MatchingItems = this.Items.filter(o => o.Barcode.includes(this.ScanResult)).slice(0, max_results);
   }
+
+  PrintPage() {
+    window.print();
+  }
+
   Items =
     [
       {
