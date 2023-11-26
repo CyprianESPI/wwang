@@ -64,9 +64,14 @@ export class AppComponent {
     window.print();
   }
 
-  AddToPrint(element: any) {
+  AddToPrint(element: Item) {
     console.log("AddToPrint:", element);
     this.PrintItems.push(element);
+  }
+
+  ClearToPrint() {
+    console.log("ClearToPrint:", this.PrintItems);
+    this.PrintItems = [];
   }
 
   Items =
