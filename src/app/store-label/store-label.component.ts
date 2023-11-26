@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Item } from '../app.component';
 
 @Component({
   selector: 'app-store-label',
@@ -9,5 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './store-label.component.css'
 })
 export class StoreLabelComponent {
-
+  @Input() item!: Item;
 }
