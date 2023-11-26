@@ -56,7 +56,15 @@ export class AppComponent {
 
   GetDbInfo(): void {
     console.log("Searching for:", this.ScanResult);
-    this.MatchingItems = this.Items.filter(o => o.Barcode.includes(this.ScanResult));
+    if (this.ScanResult === "" || this.ScanResult === null) {
+      console.log("Clear matching items");
+      this.MatchingItems = [];
+      return;
+    }
+
+    // We limit the results to avoid slow loading
+    const max_results: number = 10;
+    this.MatchingItems = this.Items.filter(o => o.Barcode.includes(this.ScanResult)).slice(0, max_results);
   }
   Items =
     [
