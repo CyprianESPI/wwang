@@ -28,8 +28,12 @@
         </mat-card-header>
 
         <p>{{Item.Name_EN}} || {{Item.Price}}€ || {{Item.Barcode}}</p>
-        <button mat-raised-button color="secondary" (click)="ScannerEnabled=false">Stop Scan</button>
-        <button mat-raised-button color="secondary" (click)="ScannerEnabled=true">Start Scan</button>
+        <button mat-fab color="secondary" (click)="ScannerEnabled=false" *ngIf="ScannerEnabled">
+          <mat-icon>videocam_off</mat-icon>
+        </button>
+        <button mat-fab color="secondary" (click)="ScannerEnabled=true" *ngIf="!ScannerEnabled">
+          <mat-icon>videocam</mat-icon>
+        </button>
         <zxing-scanner style="max-width: 90vh;" [formats]="AllowedFormats" (scanSuccess)="SuccessScan($event)"
           [enable]="ScannerEnabled"></zxing-scanner>
       </mat-card>

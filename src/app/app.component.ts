@@ -30,6 +30,7 @@ export class AppComponent {
   SuccessScan(result: string): void {
     console.log(result);
     this.ScanResult = result;
+    this.ScannerEnabled = false;
   }
 
   Item: any = {
