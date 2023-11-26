@@ -29,6 +29,9 @@ export class AppComponent {
   ScanResult = "";
   SuccessScan(result: string): void {
     console.log(result);
+
+    // TODO: filter out values with letters
+
     this.ScanResult = result;
     this.ScannerEnabled = false;
   }
