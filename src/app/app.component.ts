@@ -50,6 +50,8 @@ export class AppComponent {
 
     this.ScanResult = result;
     this.ScannerEnabled = false;
+
+    this.GetDbInfo();
   }
 
   MatchingItems: Item[] = [];
