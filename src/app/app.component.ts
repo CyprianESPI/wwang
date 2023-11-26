@@ -13,6 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { PrintPageComponent } from '../app/print-page/print-page.component'
 
 export type Item = {
   Num: string;
@@ -32,6 +33,7 @@ export type Item = {
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, ZXingScannerModule,
+    PrintPageComponent,
     MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatIconModule,
     MatToolbarModule, MatCardModule, MatListModule, MatTableModule, MatProgressBarModule],
   templateUrl: './app.component.html',
