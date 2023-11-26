@@ -1,26 +1,53 @@
 .storeLabel {
   height: 39mm;
   width: 79mm;
+  max-height: 39mm;
+  max-width: 79mm;
   border: 2px solid black;
+  overflow: hidden;
+}
+
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
 }
 
 .NameEn {
+  margin-top: 0;
+  margin-bottom: 0;
   font-size: large;
   font-weight: bold;
+  height: 3em;
+  /* that's one line, 2em for 2 lines, etc... */
+  line-height: 1em;
+  /* the height of one text line */
+  overflow: hidden;
 }
 
 .Barcode {
+  margin-top: 0;
+  margin-bottom: 0;
   font-size: medium;
 }
 
 .Price {
+  margin-top: 0;
+  margin-bottom: 0;
   font-size: x-large;
   font-weight: bolder;
 }
 
 .Num {
+
+  margin-top: 0;
+  margin-bottom: 0;
   font-size: small;
 }
+
 
 @media print {
 

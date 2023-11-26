@@ -1,6 +1,14 @@
 <div class="storeLabel">
-  <h1 class="NameEn">{{item.Name_EN}}</h1>
-  <h2 class="Barcode">{{item.Barcode}}</h2>
-  <h3 class="Price">{{item.Price}} €</h3>
-  <h4 class="Num">{{item.Num}}</h4>
+  <div style="margin: 5mm;">
+    <h1 class="NameEn">{{item.Name_EN}}</h1>
+    <h2 class="Barcode">{{item.Barcode}}</h2>
+    <div class="row">
+      <div class="column">
+        <h4 class="Num">{{item.Num}}</h4>
+      </div>
+      <div class="column" style="text-align: right;">
+        <h3 class="Price">{{item.Price}} €</h3>
+      </div>
+    </div>
+  </div>
 </div>
