@@ -24,22 +24,25 @@
             </button>
             }
           </mat-form-field>
-        </mat-card-header>
 
-        <div>
           <button mat-fab color="secondary" [disabled]="!ScanResult">
             <a href="https://www.barcodelookup.com/{{ScanResult}}">
               <mat-icon>search</mat-icon>
             </a>
           </button>
+        </mat-card-header>
 
-
+        <div>
           <button mat-fab color="secondary" (click)="ScannerEnabled=false" *ngIf="ScannerEnabled">
             <mat-icon>videocam_off</mat-icon>
           </button>
           <button mat-fab color="secondary" (click)="ScannerEnabled=true" *ngIf="!ScannerEnabled">
             <mat-icon>videocam</mat-icon>
           </button>
+
+
+          <zxing-scanner style="max-width: 90vh;" [formats]="AllowedFormats" (scanSuccess)="SuccessScan($event)"
+            [enable]="ScannerEnabled" *ngIf="ScannerEnabled"></zxing-scanner>
         </div>
 
         <mat-card>
@@ -70,8 +73,6 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
         </mat-card>
-        <zxing-scanner style="max-width: 90vh;" [formats]="AllowedFormats" (scanSuccess)="SuccessScan($event)"
-          [enable]="ScannerEnabled"></zxing-scanner>
       </mat-card>
     </div>
   </div>
