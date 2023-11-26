@@ -40,6 +40,9 @@
           <button mat-fab color="secondary" (click)="ScannerEnabled=true" *ngIf="!ScannerEnabled">
             <mat-icon>videocam</mat-icon>
           </button>
+          <button mat-fab color="secondary" (click)="PrintPage()">
+            <mat-icon>print</mat-icon>
+          </button>
         </mat-card-header>
 
         <!-- Outputs: Table with results -->
@@ -83,16 +86,7 @@
   </div>
 </main>
 
-<mat-card>
-  <mat-card-header class="noPrint">
-    <button mat-fab color="secondary" (click)="PrintPage()">
-      <mat-icon>print</mat-icon>
-    </button>
-  </mat-card-header>
-  <mat-card-content>
-    <app-print-page class="toPrint"></app-print-page>
-  </mat-card-content>
-</mat-card>
+<app-print-page class="toPrint"></app-print-page>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->

@@ -17,7 +17,6 @@ body {
     visibility: hidden;
     width: 0px;
     height: 0px;
-    overflow: hidden;
 
     display: none;
   }
@@ -28,5 +27,7 @@ body {
     height: auto;
     overflow: visible;
     display: block;
+    margin: 0mm;
+    /* this affects the margin in the printer settings */
   }
 }
