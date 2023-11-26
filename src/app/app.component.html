@@ -27,7 +27,7 @@
         </mat-card-header>
 
         <div>
-          <button mat-fab color="secondary">
+          <button mat-fab color="secondary" [disabled]="!ScanResult">
             <a href="https://www.barcodelookup.com/{{ScanResult}}">
               <mat-icon>search</mat-icon>
             </a>
