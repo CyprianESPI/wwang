@@ -4,6 +4,24 @@
   border: 2px solid black;
 }
 
+.NameEn {
+  font-size: large;
+  font-weight: bold;
+}
+
+.Barcode {
+  font-size: medium;
+}
+
+.Price {
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.Num {
+  font-size: small;
+}
+
 @media print {
 
   * {
