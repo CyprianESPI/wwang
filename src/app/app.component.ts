@@ -11,13 +11,28 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+
+export type Item = {
+  Num: string;
+  Name: string;
+  Name_EN: string;
+  Barcode: string;
+  Price: string;
+  Stock: string;
+  Price1: string;
+  Discount: string;
+  TVA: string;
+  Field10: string;
+  Field11: string;
+}
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, ZXingScannerModule,
     MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatIconModule,
-    MatToolbarModule, MatCardModule, MatListModule],
+    MatToolbarModule, MatCardModule, MatListModule, MatTableModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -36,25 +51,12 @@ export class AppComponent {
     this.ScannerEnabled = false;
   }
 
-  Item: any = {
-    Num: "",
-    Name: "",
-    Name_EN: "",
-    Barcode: "",
-    Price: "",
-    Stock: "",
-    Price1: "",
-    Discount: "",
-    TVA: "",
-    Field10: "",
-    Field11: "",
-  };
+  MatchingItems: Item[] = [];
+  displayedColumns: string[] = ['Barcode', 'Price', 'Name'];
 
   GetDbInfo(): void {
     console.log("Searching for:", this.ScanResult);
-    const item = this.Items.find(o => o.Barcode.includes(this.ScanResult));
-    console.log("Found item:", item);
-    this.Item = item;
+    this.MatchingItems = this.Items.filter(o => o.Barcode.includes(this.ScanResult));
   }
   Items =
     [
