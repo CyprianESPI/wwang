@@ -14,20 +14,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { PrintPageComponent } from '../app/print-page/print-page.component'
-
-export type Item = {
-  Num: string;
-  Name: string;
-  Name_EN: string;
-  Barcode: string;
-  Price: string;
-  Stock: string;
-  Price1: string;
-  Discount: string;
-  TVA: string;
-  Field10: string;
-  Field11: string;
-}
+import { Item } from '../app/db/db';
 
 @Component({
   selector: 'app-root',
@@ -57,6 +44,7 @@ export class AppComponent {
   }
 
   MatchingItems: Item[] = [];
+  PrintItems: Item[] = [];
   displayedColumns: string[] = ['Barcode', 'Price', 'Name'];
 
   GetDbInfo(): void {
@@ -77,8 +65,8 @@ export class AppComponent {
   }
 
   AddToPrint(element: any) {
-    console.log("AddToPrint");
-    console.log(element);
+    console.log("AddToPrint:", element);
+    this.PrintItems.push(element);
   }
 
   Items =

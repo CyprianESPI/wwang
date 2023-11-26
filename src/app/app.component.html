@@ -78,7 +78,8 @@
               <!-- Name_EN -->
               <ng-container matColumnDef="Name">
                 <th mat-header-cell *matHeaderCellDef> Name </th>
-                <td mat-cell *matCellDef="let element"> {{element.Name_EN}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.Name_EN}}
+                </td>
               </ng-container>
 
               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -91,7 +92,7 @@
   </div>
 </main>
 
-<app-print-page class="toPrint"></app-print-page>
+<app-print-page class="toPrint" [items]="PrintItems"></app-print-page>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->

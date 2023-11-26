@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreLabelComponent } from '../store-label/store-label.component';
-import { Item } from '../app.component';
+import { Item } from '../db/db';
 
 @Component({
   selector: 'app-print-page',
@@ -11,7 +11,8 @@ import { Item } from '../app.component';
   styleUrl: './print-page.component.css'
 })
 export class PrintPageComponent {
-  item: Item = {
+  @Input() items!: Item[];
+  item = {
     "Num": "A0001",
     "Name": "",
     "Name_EN": "Hata ramune",

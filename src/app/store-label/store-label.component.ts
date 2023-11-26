@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Item } from '../app.component';
+import { Item } from '../db/db';
 
 @Component({
   selector: 'app-store-label',
