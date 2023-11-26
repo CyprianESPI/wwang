@@ -23,7 +23,7 @@ import { MatListModule } from '@angular/material/list';
 })
 export class AppComponent {
   title = 'wwang';
-  AllowedFormats = [BarcodeFormat.QR_CODE, BarcodeFormat.EAN_13, BarcodeFormat.CODE_128, BarcodeFormat.DATA_MATRIX /*, ...*/];
+  AllowedFormats = [BarcodeFormat.EAN_13, BarcodeFormat.CODE_128, /*, ...*/];
   ScannerEnabled = false;
 
   ScanResult = "";
