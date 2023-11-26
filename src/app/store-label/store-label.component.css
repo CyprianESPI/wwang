@@ -3,3 +3,14 @@
   width: 79mm;
   border: 2px solid black;
 }
+
+@media print {
+
+  * {
+    visibility: visible;
+    width: auto;
+    height: auto;
+    display: block;
+  }
+
+}

@@ -6,7 +6,7 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<main class="main">
+<main class="main" class="noPrint">
   <div>
     <div>
       <mat-toolbar color="primary">
@@ -78,17 +78,21 @@
             </table>
           </mat-card-content>
         </mat-card>
-
-        <mat-card-footer>
-          <button mat-fab color="secondary" (click)="PrintPage()">
-            <mat-icon>print</mat-icon>
-          </button>
-          <app-print-page></app-print-page>
-        </mat-card-footer>
       </mat-card>
     </div>
   </div>
 </main>
+
+<mat-card>
+  <mat-card-header class="noPrint">
+    <button mat-fab color="secondary" (click)="PrintPage()">
+      <mat-icon>print</mat-icon>
+    </button>
+  </mat-card-header>
+  <mat-card-content>
+    <app-print-page class="toPrint"></app-print-page>
+  </mat-card-content>
+</mat-card>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
