@@ -13,6 +13,13 @@ body {
 /* By default disable printing stuff */
 @media print {
 
+  @page {
+    size: auto;
+    /* auto is the initial value */
+    margin: 0mm;
+    /* this affects the margin in the printer settings */
+  }
+
   .noPrint {
     visibility: hidden;
     width: 0px;
@@ -27,7 +34,5 @@ body {
     height: auto;
     overflow: visible;
     display: block;
-    margin: 0mm;
-    /* this affects the margin in the printer settings */
   }
 }
