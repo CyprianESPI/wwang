@@ -6,6 +6,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 https://cyprianespi.github.io/wwang/
 
+## Useful links
+
+### Zxing/ngx-scanner
+
+https://www.npmjs.com/package/@zxing/ngx-scanner
+
+https://github.com/zxing-js/ngx-scanner/wiki/Advanced-Usage
+
+### Angular
+
+https://angular.io/
+
+https://angular.io/guide/deployment
+
+https://material.angular.io/
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
