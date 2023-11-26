@@ -1,5 +1,3 @@
 <div class="pageA4">
-  <div class="container-flex">
-    <app-store-label [item]="item"></app-store-label>
-  </div>
+  <app-store-label *ngFor="let item of items" [item]="item"></app-store-label>
 </div>

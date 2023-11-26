@@ -1,12 +1,12 @@
 .pageA4 {
   height: 297mm;
+  max-height: 297mm;
   width: 210mm;
-}
-
-.container-flex {
-  display: flex;
-  word-wrap: break-word;
+  max-width: 210mm;
   padding: 1.6mm;
+
+  display: flex;
+  flex-flow: wrap
 }
 
 @media print {
