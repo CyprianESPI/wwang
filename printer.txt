@@ -1,0 +1,14 @@
+Requirements:
+
+
+Receipt printer
+
+- 80 mm paper width
+- wifi connection
+- usb connection ?
+- can print on http request
+- paper rolls
+
+Options:
+
+- Epson : 200+ €
