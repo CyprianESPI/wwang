@@ -12,7 +12,10 @@
       <mat-toolbar color="primary">
         <span>WhereWereAng</span>
       </mat-toolbar>
+
       <mat-card>
+
+        <!-- Inputs -->
         <mat-card-header>
           <mat-form-field style="width: 100vw;">
             <mat-label>Code</mat-label>
@@ -25,40 +28,28 @@
             }
           </mat-form-field>
 
+
           <button mat-fab color="secondary" [disabled]="!ScanResult">
             <a href="https://www.barcodelookup.com/{{ScanResult}}">
               <mat-icon>search</mat-icon>
             </a>
           </button>
+          <button mat-fab color="secondary" (click)="ScannerEnabled=false" *ngIf="ScannerEnabled">
+            <mat-icon>videocam_off</mat-icon>
+          </button>
+          <button mat-fab color="secondary" (click)="ScannerEnabled=true" *ngIf="!ScannerEnabled">
+            <mat-icon>videocam</mat-icon>
+          </button>
         </mat-card-header>
 
+        <!-- Outputs: Table with results -->
         <mat-card>
-          <mat-card-header>
-            <mat-card-header>
-              <mat-card-title>Scanner</mat-card-title>
-            </mat-card-header>
-            <mat-card-actions>
-              <button mat-fab color="secondary" (click)="ScannerEnabled=false" *ngIf="ScannerEnabled">
-                <mat-icon>videocam_off</mat-icon>
-              </button>
-              <button mat-fab color="secondary" (click)="ScannerEnabled=true" *ngIf="!ScannerEnabled">
-                <mat-icon>videocam</mat-icon>
-              </button>
-            </mat-card-actions>
-          </mat-card-header>
-
-          <mat-card-content *ngIf="ScannerEnabled" style="max-width: 90vh;">
-            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-            <zxing-scanner [formats]="AllowedFormats" (scanSuccess)="SuccessScan($event)"
-              [enable]="ScannerEnabled"></zxing-scanner>
-          </mat-card-content>
-        </mat-card>
-
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title>Results</mat-card-title>
-          </mat-card-header>
           <mat-card-content>
+            <div *ngIf="ScannerEnabled" style="max-width: 90vh;">
+              <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+              <zxing-scanner [formats]="AllowedFormats" (scanSuccess)="SuccessScan($event)"
+                [enable]="ScannerEnabled"></zxing-scanner>
+            </div>
             <table mat-table [dataSource]="MatchingItems">
 
               <!--- Note that these columns can be defined in any order.
