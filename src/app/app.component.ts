@@ -76,6 +76,11 @@ export class AppComponent {
     window.print();
   }
 
+  AddToPrint(element: any) {
+    console.log("AddToPrint");
+    console.log(element);
+  }
+
   Items =
     [
       {
