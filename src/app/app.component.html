@@ -14,20 +14,26 @@
       </mat-toolbar>
       <mat-card>
         <mat-card-header>
-          <mat-form-field>
+          <mat-form-field style="width: 100vw;">
             <mat-label>Code</mat-label>
             <input matInput type="number" [(ngModel)]="ScanResult">
             @if (ScanResult) {
-            <button matSuffix mat-icon-button aria-label="Clear" (click)="ScanResult=''">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="ScanResult=''" style="margin: 2px;">
               <mat-icon>close</mat-icon>
             </button>
             }
           </mat-form-field>
-          <a mat-raised-button color="primary" href="https://www.barcodelookup.com/{{ScanResult}}">Search online</a>
-          <button mat-raised-button color="secondary" (click)="GetDbInfo()">GetDbInfo</button>
         </mat-card-header>
 
-        <p>{{Item.Name_EN}} || {{Item.Price}}€ || {{Item.Barcode}}</p>
+        <div>
+          <a mat-raised-button color="primary" href="https://www.barcodelookup.com/{{ScanResult}}">Search online</a>
+          <button mat-raised-button color="secondary" (click)="GetDbInfo()">GetDbInfo</button>
+        </div>
+
+        <mat-card>
+          <p>{{Item.Name_EN}} || {{Item.Price}}€ || {{Item.Barcode}}</p>
+        </mat-card>
+
         <button mat-fab color="secondary" (click)="ScannerEnabled=false" *ngIf="ScannerEnabled">
           <mat-icon>videocam_off</mat-icon>
         </button>
