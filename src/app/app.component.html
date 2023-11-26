@@ -28,8 +28,10 @@
         </mat-card-header>
 
         <p>{{Item.Name_EN}} || {{Item.Price}}€ || {{Item.Barcode}}</p>
-        <zxing-scanner style="margin: 2%;" [formats]="AllowedFormats"
-          (scanSuccess)="SuccessScan($event)"></zxing-scanner>
+        <button mat-raised-button color="secondary" (click)="ScannerEnabled=false">Stop Scan</button>
+        <button mat-raised-button color="secondary" (click)="ScannerEnabled=true">Start Scan</button>
+        <zxing-scanner style="margin: 2%;" [formats]="AllowedFormats" (scanSuccess)="SuccessScan($event)"
+          [enable]="ScannerEnabled"></zxing-scanner>
       </mat-card>
     </div>
   </div>
