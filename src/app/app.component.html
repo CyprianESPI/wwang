@@ -59,7 +59,8 @@
               <ng-container matColumnDef="Barcode">
                 <th mat-header-cell *matHeaderCellDef> Barcode </th>
                 <td mat-cell *matCellDef="let element">
-                  <button mat-mini-fab color="secondary" (click)="AddToPrint(element)" *ngIf="PrintItems.length<14">
+                  <button mat-mini-fab color="secondary" (click)="AddToPrint(element)"
+                    [disabled]="PrintItems.length>=14">
                     <mat-icon>add</mat-icon>
                   </button>
                   {{element.Barcode}}
