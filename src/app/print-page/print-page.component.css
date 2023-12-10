@@ -3,11 +3,13 @@
   max-height: 297mm;
   width: 210mm;
   max-width: 210mm;
-  padding: 5mm;
+  padding: 25mm;
+  border: 1px solid black;
 
   display: flex;
-  justify-content: center;
-  flex-flow: wrap
+  align-content: center;
+  justify-content: left;
+  flex-flow: wrap;
 }
 
 @media print {
@@ -19,4 +21,7 @@
     display: block;
   }
 
+  .pageA4 {
+    border: 0px;
+  }
 }

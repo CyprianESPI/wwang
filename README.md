@@ -1,10 +1,26 @@
-# Wwang
+# Where Ware Ang
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
 
 ## Live demo
 
 https://cyprianespi.github.io/wwang/
+
+## TODO
+
+### TODO - Must!
+
+- Bigger barcode area + limit digits?
+- make print items list a set (no duplicates)
+- Add remove item from print page
+- move delete + print button below
+
+### TODO - Maybe?
+
+- Improve scanner
+- Use barcode db as API to display results within app, also remove search button
+- specific table for api results
+
 
 ## Useful links
 

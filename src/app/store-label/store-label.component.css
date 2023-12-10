@@ -1,12 +1,12 @@
+/* Dimensions should be 39x79 mm but we make it slightly bigger due to border*/
 .storeLabel {
-  height: 39mm;
-  width: 79mm;
-  max-height: 39mm;
-  max-width: 79mm;
-  border: 2px solid black;
+  height: 41mm;
+  width: 81mm;
+  max-height: 41mm;
+  max-width: 81mm;
+  border: 1px solid black;
   overflow: hidden;
 }
-
 
 .row {
   display: flex;

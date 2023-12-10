@@ -10,7 +10,7 @@
   <div>
     <div>
       <mat-toolbar color="primary">
-        <span>WhereWereAng</span>
+        <span>Where Ware Ang</span>
       </mat-toolbar>
 
       <mat-card>
@@ -39,12 +39,6 @@
           </button>
           <button mat-fab color="secondary" (click)="ScannerEnabled=true" *ngIf="!ScannerEnabled">
             <mat-icon>videocam</mat-icon>
-          </button>
-          <button mat-fab color="secondary" (click)="PrintPage()">
-            <mat-icon>print</mat-icon>
-          </button>
-          <button mat-fab color="secondary" (click)="ClearToPrint()">
-            <mat-icon>delete</mat-icon>
           </button>
         </mat-card-header>
 
@@ -92,6 +86,14 @@
         </mat-card>
       </mat-card>
     </div>
+  </div>
+  <div>
+    <button mat-fab color="secondary" (click)="PrintPage()">
+      <mat-icon>print</mat-icon>
+    </button>
+    <button mat-fab color="secondary" (click)="ClearToPrint()">
+      <mat-icon>delete</mat-icon>
+    </button>
   </div>
 </main>
 
