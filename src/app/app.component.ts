@@ -46,7 +46,7 @@ export class AppComponent {
   Items: Item[] = Db.Items;
   MatchingItems: Item[] = [];
   PrintItems: Item[] = [];
-  displayedColumns: string[] = ['Barcode', 'Price', 'Name'];
+  displayedColumns: string[] = ['Add', 'Barcode', 'Price', 'Name'];
 
   GetDbInfo(): void {
     console.log("Searching for:", this.ScanResult);
