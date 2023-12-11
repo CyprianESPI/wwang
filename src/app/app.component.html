@@ -49,6 +49,9 @@
               <h2>{{PrintItems.length}}</h2>
               <mat-icon>print</mat-icon>
             </button>
+            <button mat-fab color="secondary" (click)="PopToPrint()" [disabled]="PrintItems.length==0">
+              <mat-icon>backspace</mat-icon>
+            </button>
             <button mat-fab color="secondary" (click)="ClearToPrint()">
               <h2>{{PrintItems.length}}</h2>
               <mat-icon>delete</mat-icon>

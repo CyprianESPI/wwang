@@ -70,6 +70,10 @@ export class AppComponent {
     this.PrintItems.push(element);
   }
 
+  PopToPrint() {
+    console.log("PopToPrint:", this.PrintItems.pop());
+  }
+
   ClearToPrint() {
     console.log("ClearToPrint:", this.PrintItems);
     this.PrintItems = [];
