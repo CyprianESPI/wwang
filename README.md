@@ -8,16 +8,18 @@ https://cyprianespi.github.io/wwang/
 
 ## TODO
 
-### TODO - Must!
+### TODO - Must
 
-- Bigger barcode area + limit digits?
-- make print items list a set (no duplicates)
-- Add remove item from print page
-- move delete + print button below
+- Find reliable way to get the desired size on store labels
+- Add the possibility of defining name yourself
 
 ### TODO - Maybe?
 
+- Add Dbish link (store new names)
+
 - Improve scanner
+
+Note: API is pricy...
 - Use barcode db as API to display results within app, also remove search button
 - specific table for api results
 
