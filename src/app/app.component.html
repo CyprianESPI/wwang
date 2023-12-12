@@ -50,9 +50,10 @@
               <mat-icon>print</mat-icon>
             </button>
             <button mat-fab color="secondary" (click)="PopToPrint()" [disabled]="PrintItems.length==0">
+              <h2>1</h2>
               <mat-icon>backspace</mat-icon>
             </button>
-            <button mat-fab color="secondary" (click)="ClearToPrint()" [disabled]="PrintItems.length==0">
+            <button mat-fab color="accent" (click)="ClearToPrint()" [disabled]="PrintItems.length==0">
               <h2>{{PrintItems.length}}</h2>
               <mat-icon>delete</mat-icon>
             </button>
