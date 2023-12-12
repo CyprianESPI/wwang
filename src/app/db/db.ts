@@ -12,6 +12,10 @@ export type Item = {
   Field11: string;
 }
 
+export interface PrettyItem extends Item {
+    PrettyBarcode: string; 
+}
+
 export class Db {
   public static Items: Item[] = [
   {

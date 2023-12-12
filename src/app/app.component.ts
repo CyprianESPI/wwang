@@ -14,7 +14,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { PrintPageComponent } from '../app/print-page/print-page.component'
-import { Item, Db } from '../app/db/db';
+import { Item, Db, PrettyItem } from '../app/db/db';
 
 @Component({
   selector: 'app-root',
@@ -44,7 +44,7 @@ export class AppComponent {
   }
 
   Items: Item[] = Db.Items;
-  MatchingItems: Item[] = [];
+  MatchingItems: PrettyItem[] = [];
   PrintItems: Item[] = [];
   displayedColumns: string[] = ['Barcode', 'Price', 'Name'];
 
@@ -58,7 +58,37 @@ export class AppComponent {
 
     // We limit the results to avoid slow loading
     const max_results: number = 10;
-    this.MatchingItems = this.Items.filter(o => o.Barcode.includes(this.ScanResult)).slice(0, max_results);
+    const matching_items = this.Items.filter(o => o.Barcode.includes(this.ScanResult)).slice(0, max_results);
+    this.MatchingItems = [];
+    matching_items.forEach((item) => {
+      // Make barcode more readable by adding separtor every X char
+      const separator = "_";
+      let pretty_barcode: string = "";
+      let chars: number = 0;
+      for (let i = item.Barcode.length - 1; i >= 0; i--) {
+        chars = (chars + 1) % 6;
+        pretty_barcode = item.Barcode[i] + pretty_barcode;
+        // Text cannot start with separator
+        if (chars === 0 && i > 0) {
+          pretty_barcode = separator + pretty_barcode;
+        }
+      }
+      const pretty_item: PrettyItem = {
+        Num: item.Num,
+        Name: item.Name,
+        Name_EN: item.Name_EN,
+        Barcode: item.Barcode,
+        Price: item.Price,
+        Stock: item.Stock,
+        Price1: item.Price1,
+        Discount: item.Discount,
+        TVA: item.TVA,
+        Field10: item.Field10,
+        Field11: item.Field11,
+        PrettyBarcode: pretty_barcode,
+      };
+      this.MatchingItems.push(pretty_item);
+    })
   }
 
   PrintPage() {
