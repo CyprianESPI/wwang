@@ -27,6 +27,9 @@ import { Item, Db, PrettyItem } from '../app/db/db';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  constructor() {
+    this.UpdateDbVisitCount();
+  }
   title = 'wwang';
   AllowedFormats = [BarcodeFormat.EAN_13, BarcodeFormat.CODE_128, /*, ...*/];
   ScannerEnabled = false;
@@ -41,6 +44,23 @@ export class AppComponent {
     this.ScannerEnabled = false;
 
     this.GetDbInfo();
+  }
+
+  UpdateDbVisitCount(): void {
+    const url = "https://script.google.com/macros/s/AKfycbxkh7Sq_1On4Go3JVRAleISpWRgqYYj3s_-44tjhtuS3BFcRbWILOEDsA6hf8BNEBd2/exec";
+    fetch(url, {
+      method: 'GET',
+      // options here, like the method (GET, POST, etc.) and maybe headers for authentication (this will depend on what the AlphaVantage API wants)
+    }).then(response => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      const json = response.json(); // assuming they return json
+      console.log(json);
+      return json;
+    }).then(body => {
+      // do what you want with the response body here
+    });
   }
 
   Items: Item[] = Db.Items;
