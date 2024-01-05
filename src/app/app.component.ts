@@ -27,8 +27,20 @@ import { Item, Db, PrettyItem } from '../app/db/db';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  readonly LS_KEY_PRINT_ITEMS: string = "PrintItems";
   constructor() {
     this.UpdateDbVisitCount();
+
+    // Load array in case of refresh
+    const storedArray: string = localStorage.getItem(this.LS_KEY_PRINT_ITEMS) ?? "";
+    if (storedArray !== "") {
+      try {
+        this.PrintItems = JSON.parse(storedArray);
+      }
+      catch (e) {
+        console.error("Error loading PrintItems", e);
+      }
+    }
   }
   title = 'wwang';
   AllowedFormats = [BarcodeFormat.EAN_13, BarcodeFormat.CODE_128, /*, ...*/];
@@ -118,14 +130,17 @@ export class AppComponent {
   AddToPrint(element: Item) {
     console.log("AddToPrint:", element);
     this.PrintItems.push(element);
+    localStorage.setItem(this.LS_KEY_PRINT_ITEMS, JSON.stringify(this.PrintItems));
   }
 
   PopToPrint() {
     console.log("PopToPrint:", this.PrintItems.pop());
+    localStorage.setItem(this.LS_KEY_PRINT_ITEMS, JSON.stringify(this.PrintItems));
   }
 
   ClearToPrint() {
     console.log("ClearToPrint:", this.PrintItems);
     this.PrintItems = [];
+    localStorage.setItem(this.LS_KEY_PRINT_ITEMS, JSON.stringify(this.PrintItems));
   }
 }
