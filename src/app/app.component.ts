@@ -28,6 +28,7 @@ import { Item, Db, PrettyItem } from '../app/db/db';
 })
 export class AppComponent {
   readonly LS_KEY_PRINT_ITEMS: string = "PrintItems";
+  readonly LS_KEY_SCAN_RESULT: string = "ScanResult";
   constructor() {
     this.UpdateDbVisitCount();
 
@@ -41,6 +42,8 @@ export class AppComponent {
         console.error("Error loading PrintItems", e);
       }
     }
+    this.ScanResult = localStorage.getItem(this.LS_KEY_SCAN_RESULT) ?? "";
+    this.GetDbInfo();
   }
   title = 'wwang';
   AllowedFormats = [BarcodeFormat.EAN_13, BarcodeFormat.CODE_128, /*, ...*/];
@@ -82,6 +85,7 @@ export class AppComponent {
 
   GetDbInfo(): void {
     console.log("Searching for:", this.ScanResult);
+    localStorage.setItem(this.LS_KEY_SCAN_RESULT, this.ScanResult);
     if (this.ScanResult === "" || this.ScanResult === null) {
       console.log("Clear matching items");
       this.MatchingItems = [];
